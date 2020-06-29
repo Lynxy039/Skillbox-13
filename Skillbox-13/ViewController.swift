@@ -50,14 +50,15 @@ class ViewController: UIViewController {
   }
   func _animate(_ animationNumber: Int){
     self.isAnimating = true
-    var options = UIView.AnimationOptions()
+    var options = UIView.AnimationOptions.autoreverse
     if animationNumber == 6 {
       self.squareView.transform = CGAffineTransform(scaleX: 2, y: 2)
+      options = UIView.AnimationOptions()
     }
     if animationNumber == 7 {
       options = [.repeat, .curveLinear]
     }
-    UIView.animate(withDuration: 2, delay: 0, options: options, animations: {
+    UIView.animate(withDuration: 1, delay: 0, options: options, animations: {
       switch animationNumber {
       case 1: self.squareView.backgroundColor = .systemYellow
       case 2: self.squareView.transform = CGAffineTransform(translationX: self.rightConst.constant, y: -self.topConst.constant)
