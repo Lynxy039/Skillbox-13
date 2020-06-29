@@ -10,12 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
   
-  var animationNumber = 0 {
-    willSet (newValue){
-      _animate(newValue)
-    }
-  }
+  var animationNumber = 0
   var a = UIColor(), b = CGAffineTransform(), c = CGFloat(), d = CGFloat()
+  var isAnimating = false
   
   @IBOutlet weak var squareView: UIView!
   @IBOutlet weak var animationNumberLabel: UILabel!
@@ -23,16 +20,12 @@ class ViewController: UIViewController {
   @IBOutlet weak var topConst: NSLayoutConstraint!
   @IBOutlet weak var nextButton: UIButton!
   @IBOutlet weak var prevButton: UIButton!
-  @IBOutlet weak var stopButton: UIButton!
-  
+
   @IBAction func prevAnimation(_ sender: Any) {
     counter(false)
   }
   @IBAction func nextAnimation(_ sender: Any) {
     counter(true)
-  }
-  @IBAction func stopAnimation(_ sender: Any) {
-    squareView.layer.removeAllAnimations()
   }
   
   override func viewDidLoad() {
@@ -41,6 +34,9 @@ class ViewController: UIViewController {
     b = squareView.transform
     c = squareView.layer.cornerRadius
     d = squareView.alpha
+  }
+  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    isAnimating ? squareView.layer.removeAllAnimations() : _animate(animationNumber)
   }
   
   func counter(_ direction: Bool){
@@ -53,9 +49,7 @@ class ViewController: UIViewController {
     }
   }
   func _animate(_ animationNumber: Int){
-    self.prevButton.isHidden = true
-    self.nextButton.isHidden = true
-    self.stopButton.isHidden = false
+    self.isAnimating = true
     var options = UIView.AnimationOptions()
     if animationNumber == 6 {
       self.squareView.transform = CGAffineTransform(scaleX: 2, y: 2)
@@ -79,9 +73,7 @@ class ViewController: UIViewController {
       self.squareView.transform = self.b
       self.squareView.layer.cornerRadius = self.c
       self.squareView.alpha = self.d
-      self.prevButton.isHidden = false
-      self.nextButton.isHidden = false
-      self.stopButton.isHidden = true
+      self.isAnimating = false
     }
   }
 }

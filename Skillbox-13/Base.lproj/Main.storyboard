@@ -52,25 +52,15 @@
                                     <constraint firstAttribute="height" constant="70" id="9GX-ck-lQJ"/>
                                 </constraints>
                             </stackView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzJ-8F-ctk">
-                                <rect key="frame" x="125.5" y="531" width="124" height="72"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <state key="normal" title="STOP"/>
-                                <connections>
-                                    <action selector="stopAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m66-dg-kKf"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lvU-xd-Dad" secondAttribute="trailing" id="1ht-J1-GGA"/>
                             <constraint firstItem="DHF-zf-bIm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="6bz-R0-c3L"/>
-                            <constraint firstItem="JzJ-8F-ctk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="17:10" id="PE7-sb-eRS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lvU-xd-Dad" secondAttribute="bottom" id="X31-va-1JW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DHF-zf-bIm" secondAttribute="trailing" constant="90" id="bjl-uF-UP4"/>
                             <constraint firstItem="lvU-xd-Dad" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qWW-eC-Bw8"/>
                             <constraint firstItem="DHF-zf-bIm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="r18-id-6y7"/>
-                            <constraint firstItem="JzJ-8F-ctk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r5x-lJ-ske"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -80,7 +70,6 @@
                         <outlet property="prevButton" destination="P5t-cu-wOx" id="fBn-NU-Wx7"/>
                         <outlet property="rightConst" destination="bjl-uF-UP4" id="d9l-fE-RMJ"/>
                         <outlet property="squareView" destination="DHF-zf-bIm" id="33o-xY-yrN"/>
-                        <outlet property="stopButton" destination="JzJ-8F-ctk" id="aPL-Eh-Ukn"/>
                         <outlet property="topConst" destination="r18-id-6y7" id="icq-DK-pOe"/>
                     </connections>
                 </viewController>
