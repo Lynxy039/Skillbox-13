@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
   
-  var animationNumber = 0
+  var animationNumber = 1
   var a = UIColor(), b = CGAffineTransform(), c = CGFloat(), d = CGFloat()
   var isAnimating = false
   
